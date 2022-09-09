@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm ci --loglevel verbose
     - name: create-json
-      id: create-json
+      id: create-user-json
       uses: jsdaniell/create-json@1.1.2
       with:
         name: "user-info.json"
