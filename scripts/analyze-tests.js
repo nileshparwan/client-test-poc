@@ -1,5 +1,11 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
+const fetch = (...args) => { 
+  import('node-fetch')
+  .then(
+    ({default: fetch}) => fetch(...args)
+  );
+}
 
 console.log("Test Analysis Running");
 
@@ -29,7 +35,11 @@ const publishTestNumbers = ({
   console.log("numTotalTests", numTotalTests);
   console.log("numPassedTests", numPassedTests);
   console.log("numFailedTests", numFailedTests);
-  // todo 
+  fetch(`https://api.github.com/users/${user}`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
 }
 
 try {
