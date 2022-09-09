@@ -14,6 +14,15 @@ const getTestNumbers = () => {
     return ({ numTotalTests, numPassedTests, numFailedTests });
   });
 }
+
+const publishTestNumbers = ({
+  numTotalTests,
+  numPassedTests,
+  numFailedTests
+}) => {
+  // todo
+}
+
 try {
   execSync("npm run test-json");
 } catch (error) {
