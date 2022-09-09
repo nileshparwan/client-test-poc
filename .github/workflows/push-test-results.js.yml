@@ -31,7 +31,7 @@ jobs:
       id: create-json
       uses: jsdaniell/create-json@1.1.2
       with:
-        name: "new-json-file.json"
-        json: '{"test":"test"}'
+        name: "user-info.json"
+        json: '{"user":"${{ github.actor }}"}'
     # - run: npm test
     - run: npm run analyze-tests
