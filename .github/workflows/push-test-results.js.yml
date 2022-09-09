@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci --loglevel verbose
-    - name: create-json
+    - name: create-user-json
       id: create-user-json
       uses: jsdaniell/create-json@1.1.2
       with:
