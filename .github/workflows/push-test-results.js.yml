@@ -27,5 +27,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci --loglevel verbose
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "new-json-file.json"
+        json: '{"test":"test"}'
     # - run: npm test
     - run: npm run analyze-tests
