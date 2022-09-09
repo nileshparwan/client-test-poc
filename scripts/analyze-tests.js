@@ -10,11 +10,21 @@ const getTestNumbers = () => {
   return ({ numTotalTests, numPassedTests, numFailedTests });
 }
 
+const getGithubuserName = () => {
+  let rawdata = fs.readFileSync('./user-info.json');
+  let userInfo = JSON.parse(rawdata);
+  const { user } = userInfo;
+  if (user) {
+    return user;
+  }
+  return;
+}
+
 const publishTestNumbers = ({
   numTotalTests,
   numPassedTests,
   numFailedTests
-}) => {
+}, user) => {
   // todo
 }
 
@@ -24,7 +34,9 @@ try {
   console.error("Test Suite Failed", error);
 } finally {
   const testNumbers = getTestNumbers();
-  publishTestNumbers(testNumbers);
+  const user = getGithubuserName();
+  console.log("user", user);
+  publishTestNumbers(testNumbers, user);
 }
 
 console.log("Test Analysis Run Ended");
