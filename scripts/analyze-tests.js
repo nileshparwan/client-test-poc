@@ -4,15 +4,10 @@ const fs = require('fs');
 console.log("Test Analysis Running");
 
 const getTestNumbers = () => {
-  fs.readFile('./analysis-results.json', (error, data) => {
-    if (error) {
-      console.error(error);
-      return;
-    }
-    const analysisResults = JSON.parse(data);
-    const { numFailedTests, numPassedTests, numTotalTests } = analysisResults;
-    return ({ numTotalTests, numPassedTests, numFailedTests });
-  });
+  let rawdata = fs.readFileSync('./analysis-results.json');
+  let analysisResults = JSON.parse(rawdata);
+  const { numFailedTests, numPassedTests, numTotalTests } = analysisResults;
+  return ({ numTotalTests, numPassedTests, numFailedTests });
 }
 
 const publishTestNumbers = ({
