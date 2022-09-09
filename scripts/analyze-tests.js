@@ -35,7 +35,6 @@ try {
 } finally {
   const testNumbers = getTestNumbers();
   const user = getGithubuserName();
-  console.log("user", user);
   publishTestNumbers(testNumbers, user);
 }
 
