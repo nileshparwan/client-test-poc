@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import example from "../index";
+import example from "../src/index";
 
 describe('Example Test Suite', () => {
   test('should pass 1', () => {

@@ -1,8 +1,8 @@
 {
   "name": "client-test-poc",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
+    "test": "jest",
     "test-json": "jest --json --outputFile=analysis-results.json",
     "analyze-tests": "node ./scripts/analyze-tests.js"
   },
