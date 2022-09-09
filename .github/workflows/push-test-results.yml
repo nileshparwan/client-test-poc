@@ -7,8 +7,6 @@ jobs:
       - run: echo "Job triggered by a ${{ github.event_name }} event."
       - run: echo "Running on a ${{ runner.os }}."
       - run: echo "User is ${{ github.actor }}. Repository is ${{ github.repository }}."
-      - name: Setup Node.js environment
-          uses: actions/setup-node@v3.4.1
       - name: Install NPM Packages
         run: |
           npm install --loglevel verbose
