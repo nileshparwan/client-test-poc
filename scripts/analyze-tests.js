@@ -50,13 +50,21 @@ const publishTestNumbers = ({
   html_url
 }, 
 user) => {
-  console.log("user", user);
-  console.log("name", name);
-  console.log("html_url", html_url);
-  console.log("avatar_url", avatar_url);
-  console.log("numTotalTests", numTotalTests);
-  console.log("numPassedTests", numPassedTests);
-  console.log("numFailedTests", numFailedTests);
+  try {
+    const pushData = {
+      user,
+      name,
+      html_url,
+      avatar_url,
+      numTotalTests,
+      numPassedTests,
+      numFailedTests
+    }
+    console.log("pushData", pushData);
+    // todo
+  } catch (_) {
+    return;
+  }
 }
 
 try {
