@@ -1,11 +1,6 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
-const fetch = (...args) => { 
-  import('node-fetch')
-  .then(
-    ({default: fetch}) => fetch(...args)
-  );
-}
+const fetch = require('sync-fetch');
 
 console.log("Test Analysis Running");
 
@@ -35,11 +30,8 @@ const publishTestNumbers = ({
   console.log("numTotalTests", numTotalTests);
   console.log("numPassedTests", numPassedTests);
   console.log("numFailedTests", numFailedTests);
-  fetch(`https://api.github.com/users/${user}`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
+  const gitHubdata = fetch(`https://api.github.com/users/${user}`).json();
+  console.log(gitHubdata);
 }
 
 try {
