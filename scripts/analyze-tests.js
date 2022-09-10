@@ -56,6 +56,7 @@ const createNewUser = (data) => {
   });
   console.log("Data Created");
 }
+
 const updateUserDetails = (data, user) => {
   fetch(`https://api-test-poc-1.herokuapp.com/devs/${user}`, {
     method: 'patch',
@@ -64,6 +65,7 @@ const updateUserDetails = (data, user) => {
   });
   console.log("Data Updated");
 }
+
 const publishTestNumbers = ({
   numTotalTests,
   numPassedTests,
@@ -85,7 +87,12 @@ user) => {
       numFailedTests
     }
     console.log("pushData", pushData);
-    // todo
+    if (verifyIfUserExist(user)) {
+      createNewUser(pushData);
+    } else {
+      updateUserDetails(pushData, user);
+    }
+    return;
   } catch (_) {
     return;
   }
