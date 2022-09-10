@@ -40,6 +40,13 @@ const getGithubData = (user) => {
   }
 }
 
+const verifyIfUserExist = (user) => {
+  const gitUserData = fetch(`https://api-test-poc-1.herokuapp.com/devs/${user}`).json();
+  if (gitUserData.length === 0) {
+    return false;
+  }
+  return true;
+}
 const publishTestNumbers = ({
   numTotalTests,
   numPassedTests,
