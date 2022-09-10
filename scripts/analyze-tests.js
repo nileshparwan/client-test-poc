@@ -88,7 +88,7 @@ user) => {
       numFailedTests
     }
     console.log("pushData", pushData);
-    if (verifyIfUserExist(user)) {
+    if (!verifyIfUserExist(user)) {
       createNewUser(pushData);
     } else {
       updateUserDetails(pushData, user);
