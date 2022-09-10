@@ -18,7 +18,7 @@ describe('Example Test Suite', () => {
     expect(example('_')).toBe('_');
   });
 
-  test('should pass 5', () => {
-    expect(example('__')).toBe('__');
+  test('should fail 5', () => {
+    expect(example('__')).toBe('');
   });
 });
