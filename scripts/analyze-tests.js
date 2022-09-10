@@ -47,6 +47,14 @@ const verifyIfUserExist = (user) => {
   }
   return true;
 }
+const createNewUser = (data) => {
+  fetch('https://api-test-poc-1.herokuapp.com/devs/', {
+    method: 'post',
+    body: JSON.stringify(data),
+    headers: {'Content-Type': 'application/json'}
+  });
+  console.log("Data Created");
+}
 const publishTestNumbers = ({
   numTotalTests,
   numPassedTests,
