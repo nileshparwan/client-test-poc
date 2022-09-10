@@ -42,6 +42,7 @@ const getGithubData = (user) => {
 
 const verifyIfUserExist = (user) => {
   const gitUserData = fetch(`https://api-test-poc-1.herokuapp.com/devs/${user}`).json();
+  console.log("Data Verified:", gitUserData);
   if (gitUserData.length === 0) {
     return false;
   }
