@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
 import example_ from "../src/example_/example_";
 
-describe.skip('Example Test Suite', () => {
+describe('Example Test Suite', () => {
   test('should pass 1', () => {
     expect(example_(1)).toBe(1);
   });
